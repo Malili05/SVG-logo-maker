@@ -30,7 +30,7 @@ function writetofile(fileName, answers) {
   
     // Using file system module to generate svg file, takes in file name given in the promptUser function, the svg string, and a ternary operator which handles logging any errors, or a "Generated logo.svg" message to the console  
     fs.writeFile(fileName, svgString, (err) => {
-      err ? console.log(err) : console.log("Created logo.svg");
+      err ? console.log(err) : console.log("Generated logo.svg");
     });
   }
   
@@ -73,8 +73,7 @@ function writetofile(fileName, answers) {
           console.log("Must enter a value of no more than 3 characters");
           promptUser();
         } else {
-          // Calling write file function to generate SVG file
-          writeToFile("logo.svg", answers);
+          writetofile("logo.svg", answers);
         }
       });
   }
