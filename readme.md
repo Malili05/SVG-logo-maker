@@ -11,7 +11,8 @@ to create a SVG logo for the user from their selections
 - [License](#License)
 
 ## Installation
-NA
+run npm install to install the required dependencies
+
 
 ## Usage
 load the index.js in node and answer the prompts. 
