@@ -21,20 +21,18 @@ function writetofile(fileName, answers) {
       svgString += `<circle cx="150" cy="115" r="80" fill="${answers.shapeColor}"/>`;
     }
   
-    // <text> tag gives rise to text alignment, text-content/text-color taken in from user prompt and gives default font size of "40"
+
     svgString += `<text x="150" y="130" text-anchor="middle" font-size="40" fill="${answers.textColor}">${answers.text}</text>`;
-    // Closing </g> tag
+
     svgString += "</g>";
-    // Closing </svg> tag
+
     svgString += "</svg>";
-  
-    // Using file system module to generate svg file, takes in file name given in the promptUser function, the svg string, and a ternary operator which handles logging any errors, or a "Generated logo.svg" message to the console  
+   
     fs.writeFile(fileName, svgString, (err) => {
       err ? console.log(err) : console.log("Generated logo.svg");
     });
   }
   
-  // This function utilizes inquirer .prompt to prompt the user to answer questions in the command line and save user input
   function promptUser() {
     inquirer
       .prompt([
@@ -68,7 +66,6 @@ function writetofile(fileName, answers) {
         },
       ])
       .then((answers) => {
-        // Error handling for text prompt (user must enter 3 characters or less for logo to generate)
         if (answers.text.length > 3) {
           console.log("Must enter a value of no more than 3 characters");
           promptUser();
@@ -78,5 +75,4 @@ function writetofile(fileName, answers) {
       });
   }
   
-  // Calling promptUser function so inquirer prompts fire off when application is ran
   promptUser();

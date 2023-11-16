@@ -23,13 +23,13 @@ describe("Square test", () => {
   });
 });
 
-// Unit testing -> testing for a circle with a #ca00ca background to render
+// Unit testing -> testing for a circle with a #c492b1 background to render
 describe("Circle test", () => {
-  test("test for a circle with a #ca00ca background", () => {
+  test("test for a circle with a #c492b1 background", () => {
     const shape = new Circle();
-    shape.setColor("#ca00ca");
+    shape.setColor("#c492b1");
     expect(shape.render()).toEqual(
-      '<circle cx="150" cy="115" r="80" fill="#ca00ca" />'
+      '<circle cx="150" cy="115" r="80" fill="#c492b1" />'
     );
   });
 });
